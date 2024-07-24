@@ -10,7 +10,7 @@ Purpose: Research; Emulates YouTube's Video Compression.
 #include <string>
 #include <fstream>
 #include <cstdio> 
-#include "include/logo.h"
+#include "include/DMC/YT-CPlogo.h"
 
 #ifdef _WIN32
 #include <windows.h>
