@@ -22,10 +22,10 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MY_APP_VERSION: ${{ env.MY_APP_VERSION }}
+          MY_APP_VERSION: ${{ secrets.VER }}
         with:
-          tag_name: ${{ env.MY_APP_VERSION }}
-          release_name: Release ${{ env.MY_APP_VERSION }}
+          tag_name: ${{ secrets.VER }}
+          release_name: Release ${{ secrets.VER }}
           body: Automated Release
           draft: false
           prerelease: false
