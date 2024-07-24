@@ -13,15 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up MinGW
-        uses: msys2/setup-msys2@v2
-        with:
-          msystem: MINGW64
-
-      - name: Install GCC
+      - name: Install Chocolatey
         run: |
-          pacman -Syu --noconfirm
-          pacman -S --noconfirm mingw-w64-x86_64-gcc
+          Set-ExecutionPolicy Bypass -Scope Process -Force
+          iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+      - name: Install MinGW and GCC
+        run: |
+          choco install mingw -y
 
       - name: Build executable
         run: |
