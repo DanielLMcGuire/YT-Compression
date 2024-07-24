@@ -3,44 +3,42 @@ name: Build and Release
 on:
   push:
     branches:
-      - main
+      - main  # Adjust this to your main branch name
 
-permissions:
-  id-token: write
-  contents: read
-  
 jobs:
   build:
-    runs-on: windows-2022
+    runs-on: windows-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: Build executable
-        run: |
-          g++ -o YTCompression.exe src/YTCompression.cpp
-
-      - name: Get version number
-        id: get_version
-        run: |
-          $VERSION = Get-Content src/version.txt
-          Write-Output "VERSION=$VERSION" | Out-File -Append -FilePath $env:GITHUB_ENV
-
-      - name: Create Release
-        uses: alice-biometrics/release-creator@v1.0.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: ${{ env.VERSION }}
-          branch: main
-          description: 'Release of version ${{ env.VERSION }}'
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Compiler
+        uses: rlalik/setup-cpp-compiler@master
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./YTCompression.exe
-          asset_name: YTCompression.exe
-          asset_content_type: application/octet-stream
+          compiler: latest  # Use the latest version of g++
+
+      - name: Get Version
+        run: |
+          $version = Get-Content src/version.txt -First 1
+          echo "Version: $version"
+          echo "::set-env name=MY_APP_VERSION::$version"
+
+
+      - name: Build
+        run: |
+          g++ -o YT-Compression.exe src/YTCompression.cpp  # Adjust your build command
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MY_APP_VERSION: ${{ env.MY_APP_VERSION }}
+        with:
+          tag_name: ${{ env.MY_APP_VERSION }}
+          release_name: Release ${{ env.MY_APP_VERSION }}
+          body: |
+            Automated Release
+          draft: false
+          prerelease: false
