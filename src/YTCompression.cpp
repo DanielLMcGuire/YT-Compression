@@ -1,8 +1,16 @@
+/*
+Program: YouTubeCompression (C++)
+
+Author: Daniel McGuire
+
+Purpose: Research; Emulates YouTube's Video Compression.
+*/
 #include <iostream>
 #include <cstdlib>
 #include <string>
 #include <fstream>
 #include <cstdio> 
+#include "include/logo.h"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -126,13 +134,6 @@ void two_pass_encoding(const std::string &input_file) {
     std::cout << "Running second pass" << std::endl;
     std::cout << "If the command line seems frozen, it is working in background." << std::endl;
     run_ffmpeg(second_pass_command);
-}
-
-void logo() {
-    const std::string VERSION = "0.1.0.7.2430";
-    const std::string TITLE = "YouTube Compression Tool";
-    const std::string LOGO = TITLE + " " + VERSION;
-    std::cout << "\033[34m" << LOGO << "\033[0m" << std::endl; // Blue text
 }
 
 int main(int argc, char *argv[]) {
