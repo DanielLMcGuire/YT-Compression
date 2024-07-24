@@ -28,13 +28,12 @@ jobs:
           Write-Output "VERSION=$VERSION" | Out-File -Append -FilePath $env:GITHUB_ENV
 
       - name: Create Release
-        uses: actions/create-release@v1
+        uses: alice-biometrics/release-creator@v1.0.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.VERSION }}
-          release_name: ${{ env.VERSION }}
-          body: 'Release of version ${{ env.VERSION }}'
+          version: ${{ env.VERSION }}
+          branch: main
+          description: 'Release of version ${{ env.VERSION }}'
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
