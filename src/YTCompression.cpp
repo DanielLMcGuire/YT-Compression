@@ -104,11 +104,11 @@ std::string determine_codec(int width, int height) {
 }
 
 void two_pass_encoding(const std::string &input_file) {
-    const std::string video_bitrate = "2M";
-    const std::string audio_bitrate = "128k";
-    const std::string preset = "slow";
-    const std::string audio_codec_high_bitrate = "libopus";
-    const std::string audio_codec_low_bitrate = "aac";
+    std::string video_bitrate = "2M";
+    std::string audio_bitrate = "128k";
+    std::string preset = "slow";
+    std::string audio_codec_high_bitrate = "libopus";
+    std::string audio_codec_low_bitrate = "aac";
 
     auto [width, height] = get_video_resolution(input_file);
     std::string codec = determine_codec(width, height);
