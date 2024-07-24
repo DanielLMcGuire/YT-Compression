@@ -1,5 +1,6 @@
 
 # YouTube Compression Tool
+[Check out the glitchy crap version using ffmpeg dlls (It's actually kind of cool!)](https://github.com/DanielLMcGuire/YTCompression-Rewrite)
 
 ## Overview
 
