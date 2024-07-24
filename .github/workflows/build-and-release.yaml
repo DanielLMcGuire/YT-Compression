@@ -1,0 +1,53 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main # or the branch you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up MinGW
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+
+      - name: Install GCC
+        run: |
+          pacman -Syu --noconfirm
+          pacman -S --noconfirm mingw-w64-x86_64-gcc
+
+      - name: Build executable
+        run: |
+          g++ -o YTCompression.exe src/YTCompression.cpp
+
+      - name: Get version number
+        id: get_version
+        run: |
+          $VERSION = Get-Content src/version.txt
+          Write-Output "VERSION=$VERSION" | Out-File -Append -FilePath $env:GITHUB_ENV
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.VERSION }}
+          release_name: ${{ env.VERSION }}
+          body: 'Release of version ${{ env.VERSION }}'
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./YTCompression.exe
+          asset_name: YTCompression.exe
+          asset_content_type: application/octet-stream
