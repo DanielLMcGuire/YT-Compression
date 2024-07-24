@@ -18,17 +18,6 @@ jobs:
         with:
           compiler: latest  # Use the latest version of g++
 
-      - name: Load environment variables
-        run: |
-          cat .env >> $GITHUB_ENV
-
-      - name: Get Version
-        run: |
-          $version = Get-Content src/version.txt -First 1
-          echo "Version: $version"
-          echo "::set-env name=MY_APP_VERSION::$version"
-
-
       - name: Build
         run: |
           g++ -o YT-Compression.exe src/YTCompression.cpp
