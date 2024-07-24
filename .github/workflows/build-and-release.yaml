@@ -42,7 +42,6 @@ jobs:
         with:
           tag_name: ${{ env.MY_APP_VERSION }}
           release_name: Release ${{ env.MY_APP_VERSION }}
-        body: |
-          Release notes for ${{ env.MY_APP_VERSION }}
+          body: Automated Release
           draft: false
           prerelease: false
