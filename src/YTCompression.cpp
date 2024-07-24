@@ -137,12 +137,11 @@ void two_pass_encoding(const std::string &input_file) {
 }
 
 int main(int argc, char *argv[]) {
+    logo(); // Display the logo at the start
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <input_file>" << std::endl;
         return EXIT_FAILURE;
     }
-
-    logo(); // Display the logo at the start
 
     std::string input_file = argv[1];
     try {
