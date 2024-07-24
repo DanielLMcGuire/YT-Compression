@@ -2,8 +2,8 @@ name: Build and Release
 
 on:
   push:
-    branches:
-      - main  # Adjust this to your main branch name
+    tags:
+      - '*'  # Trigger on all tags
 
 jobs:
   build:
@@ -11,21 +11,19 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build
         run: |
           g++ -o YT-Compression.exe src/YTCompression.cpp
 
-      - name: Release
+      - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MY_APP_VERSION: ${{ secrets.VER }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ secrets.VER }}
-          release_name: Release ${{ secrets.VER }}
+          tag: ${{ github.ref }}
+          name: Release ${{ github.ref }}
           body: Automated Release
-          draft: false
-          prerelease: false
+          artifacts: './YT-Compression.exe'
+          artifactContentType: 'application/octet-stream'
+          token: ${{ secrets.GITHUB_TOKEN }}
