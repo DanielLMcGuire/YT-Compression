@@ -3,8 +3,12 @@ name: Build and Release
 on:
   push:
     branches:
-      - main # or the branch you want to trigger the workflow on
+      - main
 
+permissions:
+  contents: read
+  releases: write
+  
 jobs:
   build:
     runs-on: windows-2022
