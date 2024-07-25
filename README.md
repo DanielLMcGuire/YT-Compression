@@ -28,7 +28,7 @@ The YouTube Compression Tool is a command-line application designed to compress 
 
 2. **Build the project:**
 
-   Use the provided `Makefile` to compile the code. You can build for Windows or Linux: (On Windows, only the exe will build. On linux it may build both the Windows and Linux version.)
+   Use the provided `Makefile` to compile the code.
 
    ```bash
    make windows 
