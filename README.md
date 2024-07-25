@@ -17,7 +17,7 @@ The YouTube Compression Tool is a command-line application designed to compress 
 - **Windows Users:** You need `winget` installed. If it's not available, the tool will prompt to download and install it automatically.
 - **Linux Users:** Ensure that `ffmpeg` and `ffprobe` are installed on your system.
 
-## Installation
+## Build 
 
 1. **Clone the repository:**
 
