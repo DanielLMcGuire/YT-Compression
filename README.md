@@ -24,21 +24,33 @@ The YouTube Compression Tool is a command-line application designed to compress 
    ```bash
    git clone --recursive https://github.com/DanielLMcGuire/YT-Compression.git
    cd YT-Compression/src
+   git clone --recursive https://github.com/DanielLMcGuire/YT-Compression.git
+   cd YT-Compression
    ```
 
 2. **Build the project:**
 
    Use the provided `Makefile` to compile the code. You can build for Windows or Linux: (On Windows, only the exe will build. On linux it may build both the Windows and Linux version.)
+   Use the provided `Makefile` to compile the code. You can build for Windows or Linux: (On Windows, only the exe will build. On linux it may build both the Windows and Linux version.)
 
    ```bash
-   make 
+   make windows 
+   ```
+   ```
+   make linux
+   ```
+   ```
+   make all
    ```
 
 ## Usage
 
 To use the tool, run the compiled executable with the path to your video file as an argument.
+To use the tool, run the compiled executable with the path to your video file as an argument.
 
 ```bash
+cd bin
+./YTCompression <Video.file>
 cd bin
 ./YTCompression <Video.file>
 ```
