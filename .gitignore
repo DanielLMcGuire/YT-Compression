@@ -38,3 +38,6 @@
 *.log*
 ffmpeg*.txt
 *.dmcomplog
+
+#autoadd
+ucrt.bat

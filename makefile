@@ -1,6 +1,6 @@
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra
+CXXFLAGS = -std=c++23 -Wall -Wextra
 
 # Source file
 SRC = src/YTCompression.cpp

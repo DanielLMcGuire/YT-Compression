@@ -1,0 +1,12 @@
+{
+    "IDS_USAGE_ERROR": "Error de uso en español",
+    "IDS_INVALID_PATH": "Ruta especificada no válida",
+    "IDS_PATH_ADDED": "Ruta añadida con éxito",
+    "IDS_PATH_REMOVED": "Ruta eliminada con éxito",
+    "IDS_FILE_NOT_FOUND": "Archivo no encontrado",
+    "IDS_ACCESS_DENIED": "Acceso denegado",
+    "IDS_INVALID_LOCALE": "Configuración de idioma no válida",
+    "IDS_HELP_MESSAGE": "Uso: AddPath [ruta] [--locale=(fr,en,es)]",
+    "IDS_VERSION_INFO": "AddPath v1.0 - Un programa para gestionar la variable PATH",
+    "IDS_ERROR_MESSAGE": "Se produjo un error"
+}

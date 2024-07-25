@@ -1,0 +1,28 @@
+Copyleft 2024 Daniel McGuire Corp.
+Program: AddPath (C)
+
+Writer: Daniel McGuire
+Writer: Andrew Martin
+Writer: ChatGPT (have to give credit lol)
+
+Purpose: Allows quick writing to PATH variable
+
+
+Copyleft 2024 Daniel McGuire Corp.
+Programme : AddPath (C)
+
+Auteur : Daniel McGuire
+Auteur : Andrew Martin
+Auteur : ChatGPT (il faut rendre hommage)
+
+But : Permet une écriture rapide dans la variable PATH
+
+
+Copyleft 2024 Daniel McGuire Corp.
+Programa: AddPath (C)
+
+Autor: Daniel McGuire
+Autor: Andrew Martin
+Autor: ChatGPT (hay que dar crédito)
+
+Propósito: Permite la escritura rápida en la variable PATH

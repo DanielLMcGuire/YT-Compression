@@ -11,10 +11,11 @@ Purpose: Research; Emulates YouTube's Video Compression.
 #include <fstream>
 #include <cstdio> 
 #include "include/DMC/YT-CPlogo.h"
-
+// If OS = Windows, then use these:
 #ifdef _WIN32
 #include <windows.h>
 #include <shellapi.h>
+// If OS is NOT Windows, use this instead: 
 #else
 #include <unistd.h>
 #endif
@@ -137,7 +138,8 @@ void two_pass_encoding(const std::string &input_file) {
 }
 
 int main(int argc, char *argv[]) {
-    logo(); // Display the logo at the start
+    logo(); 
+    
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <input_file>" << std::endl;
         return EXIT_FAILURE;
@@ -151,8 +153,6 @@ int main(int argc, char *argv[]) {
         std::cerr << "\033[31mError: " << e.what() << "\033[0m" << std::endl; // Red text for errors
         return 1;
     }
-
-    logo(); // Display the logo at the end
 
     return 0;
 }

@@ -1,0 +1,12 @@
+{
+    "IDS_USAGE_ERROR": "Usage error in English",
+    "IDS_INVALID_PATH": "Invalid path specified",
+    "IDS_PATH_ADDED": "Path added successfully",
+    "IDS_PATH_REMOVED": "Path removed successfully",
+    "IDS_FILE_NOT_FOUND": "File not found",
+    "IDS_ACCESS_DENIED": "Access denied",
+    "IDS_INVALID_LOCALE": "Invalid locale setting",
+    "IDS_HELP_MESSAGE": "Usage: AddPath [path] [--locale=(fr,en,es)]",
+    "IDS_VERSION_INFO": "AddPath v1.0 - A program to manage PATH variable",
+    "IDS_ERROR_MESSAGE": "An error occurred"
+}

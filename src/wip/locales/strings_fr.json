@@ -1,0 +1,12 @@
+{
+    "IDS_USAGE_ERROR": "Erreur d'utilisation en français",
+    "IDS_INVALID_PATH": "Chemin invalide spécifié",
+    "IDS_PATH_ADDED": "Chemin ajouté avec succès",
+    "IDS_PATH_REMOVED": "Chemin supprimé avec succès",
+    "IDS_FILE_NOT_FOUND": "Fichier non trouvé",
+    "IDS_ACCESS_DENIED": "Accès refusé",
+    "IDS_INVALID_LOCALE": "Paramètre de langue invalide",
+    "IDS_HELP_MESSAGE": "Utilisation : AddPath [chemin] [--locale=(fr,en,es)]",
+    "IDS_VERSION_INFO": "AddPath v1.0 - Un programme pour gérer la variable PATH",
+    "IDS_ERROR_MESSAGE": "Une erreur est survenue"
+}
