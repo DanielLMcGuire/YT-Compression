@@ -10,8 +10,8 @@ OBJ_DIR = ./obj
 OBJ_FILE = $(OBJ_DIR)/Object.o
 
 # Output executables
-TARGET_WIN = ./bin/yt_compression.exe
-TARGET_LINUX = ./bin/yt_compression
+TARGET_WIN = ./bin/ytcomp.exe
+TARGET_LINUX = ./bin/ytcomp
 
 # Default rule to build both Windows and Linux targets
 all: win linux
