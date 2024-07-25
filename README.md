@@ -23,7 +23,7 @@ The YouTube Compression Tool is a command-line application designed to compress 
 
    ```bash
    git clone --recursive https://github.com/DanielLMcGuire/YT-Compression.git
-   cd YT-Compression/src
+   cd YT-Compression
    ```
 
 2. **Build the project:**
